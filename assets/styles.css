@@ -1,0 +1,430 @@
+/* Importing modern sans-serif typography */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Base style resets and variables */
+:root {
+    --primary-color: #0b57d0;       /* Medical Blue */
+    --accent-red: #ea4335;          /* Healthcare Red */
+    --accent-yellow: #fbbc05;       /* Warning Yellow */
+    --accent-green: #34a853;        /* Success Green */
+    --bg-light: #f8fafd;            /* Soft off-white */
+    --bg-card-light: #ffffff;       /* Pure white */
+    --text-primary: #1f1f1f;
+    --text-secondary: #5f6368;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --border-color: rgba(0, 0, 0, 0.05);
+    --bg-simulator: #f0f7ff;
+    --border-radius: 16px;
+    --transition-speed: 0.3s;
+}
+
+/* Apply variables to the Streamlit app wrapper */
+.stApp {
+    background-color: var(--bg-light) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Global text elements typography and adaptability */
+h1, h2, h3, h4, h5, h6, p, li, label, [data-testid="stWidgetLabel"] p {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Force label and widget title text colors to adapt to variables */
+label, 
+[data-testid="stWidgetLabel"] p, 
+div[data-testid="stSlider"] span {
+    color: var(--text-primary) !important;
+}
+
+.stMarkdown p, .stMarkdown li {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Style all bordered containers natively as cards */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: var(--bg-card-light) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-soft) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 24px !important;
+    margin-bottom: 20px !important;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Predict Page workstation card overrides */
+div[data-element-id^="predict_card"],
+div[class*="st-key-predict_card"] {
+    border: 1px solid rgba(11, 87, 208, 0.08) !important;
+}
+
+div[data-element-id^="predict_card"]:hover,
+div[class*="st-key-predict_card"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium) !important;
+}
+
+/* Workflow steps grid container overrides */
+div[data-element-id^="workflow_card"],
+div[class*="st-key-workflow_card"] {
+    border: 1px solid var(--border-color) !important;
+}
+
+div[data-element-id^="workflow_card"]:hover,
+div[class*="st-key-workflow_card"]:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-medium) !important;
+    border-color: rgba(11, 87, 208, 0.2) !important;
+}
+
+
+/* About Page whitepaper overrides (flat, minimal card styling) */
+div[data-element-id^="about_card"],
+div[class*="st-key-about_card"] {
+    box-shadow: none !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+}
+
+div[data-element-id^="about_card"]:hover,
+div[class*="st-key-about_card"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Highlighted about page developer header banner */
+div[data-element-id="about_hero_card"],
+div[class*="st-key-about_hero_card"] {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode div[data-element-id="about_hero_card"],
+body.dark-mode div[class*="st-key-about_hero_card"],
+.stApp[style*="--bg-light: #000000"] div[data-element-id="about_hero_card"],
+.stApp[style*="--bg-light: #000000"] div[class*="st-key-about_hero_card"] {
+    background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%) !important;
+}
+
+/* Status alerts cards */
+.status-card-green {
+    background-color: rgba(52, 168, 83, 0.15) !important;
+    border-left: 6px solid var(--accent-green) !important;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: var(--text-primary) !important;
+}
+
+.status-card-yellow {
+    background-color: rgba(251, 188, 5, 0.15) !important;
+    border-left: 6px solid var(--accent-yellow) !important;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: var(--text-primary) !important;
+}
+
+.status-card-red {
+    background-color: rgba(234, 67, 53, 0.15) !important;
+    border-left: 6px solid var(--accent-red) !important;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: var(--text-primary) !important;
+}
+
+/* Risk Meter Gauge Container */
+.gauge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.gauge-percentage {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 8px 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Horizontal Workflow Styling */
+.workflow-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.workflow-step {
+    flex: 1;
+    min-width: 140px;
+    background-color: var(--bg-card-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    margin: 0 10px;
+}
+
+.workflow-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Clinical Simulator Panel Card styling */
+.simulator-card {
+    background-color: var(--bg-simulator) !important;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 6px solid var(--primary-color) !important;
+    box-shadow: var(--shadow-soft);
+    margin-top: 15px;
+    color: var(--text-primary) !important;
+}
+
+/* Beautiful Animated Buttons */
+.stButton>button {
+    background: linear-gradient(135deg, #0b57d0 0%, #1a73e8 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 30px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3) !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+}
+
+.stButton>button:hover {
+    transform: scale(1.02) !important;
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4) !important;
+    background: linear-gradient(135deg, #1a73e8 0%, #0b57d0 100%) !important;
+}
+
+/* Corporate Form Selects, Inputs and Tables adapting rules */
+div[data-baseweb="select"] > div,
+div[data-baseweb="popover"] ul,
+div[data-baseweb="popover"] li {
+    background-color: var(--bg-card-light) !important;
+    color: var(--text-primary) !important;
+}
+
+input {
+    background-color: var(--bg-card-light) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+div[data-testid="stTable"] th {
+    background-color: var(--bg-light) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+}
+
+div[data-testid="stTable"] td {
+    background-color: var(--bg-card-light) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Premium Sidebar Style overrides */
+section[data-testid="stSidebar"] {
+    background-color: var(--bg-sidebar) !important;
+    border-right: 1px solid var(--border-sidebar) !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.02) !important;
+}
+
+div[data-testid="stSidebarNav"] {
+    padding-top: 20px !important;
+}
+
+/* Base navigation list and link capsules */
+div[data-testid="stSidebarNav"] ul {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+div[data-testid="stSidebarNav"] ul li {
+    padding: 2px 14px !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    color: var(--text-nav) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+}
+
+/* Sidebar elements general legibility */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4 {
+    color: var(--text-primary) !important;
+}
+
+/* Inactive sidebar links span text color override */
+div[data-testid="stSidebarNav"] ul li a span {
+    color: var(--text-nav) !important;
+}
+
+/* Hover effect */
+div[data-testid="stSidebarNav"] ul li a:hover {
+    background-color: var(--bg-nav-hover) !important;
+    color: var(--text-nav-hover) !important;
+    transform: translateX(4px) !important;
+    border-color: rgba(11, 87, 208, 0.1) !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a:hover span,
+div[data-testid="stSidebarNav"] ul li a:hover * {
+    color: var(--text-nav-hover) !important;
+}
+
+/* Active navigation link highlights */
+div[data-testid="stSidebarNav"] ul li a[aria-current="page"] {
+    background: linear-gradient(135deg, #0b57d0 0%, #1a73e8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(11, 87, 208, 0.15) !important;
+    transform: none !important;
+    border: none !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a[aria-current="page"] span,
+div[data-testid="stSidebarNav"] ul li a[aria-current="page"] * {
+    color: #ffffff !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a[aria-current="page"]:hover {
+    color: #ffffff !important;
+    transform: none !important;
+}
+
+/* Sidebar navigation hidden item class rules */
+div[data-testid="stSidebarNav"] ul li:first-child,
+div[data-testid="stSidebarNav"] a[href="/"] {
+    display: none !important;
+}
+
+/* Footer styling */
+.footer-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Horizontal Timeline Workflow Styling */
+.timeline-wrapper {
+    width: 100%;
+    padding: 30px 10px;
+    background-color: var(--bg-card-light);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    margin: 20px 0 30px 0;
+    overflow-x: auto; /* Allow horizontal scroll on mobile/tablet */
+    -webkit-overflow-scrolling: touch;
+}
+
+.timeline-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-width: 950px; /* Guarantee timeline items stay horizontal and don't squish */
+    padding: 0 40px;
+    position: relative;
+}
+
+/* Mathematically centered horizontal progress line */
+.timeline-steps::before {
+    content: '';
+    position: absolute;
+    top: 22px; /* Half of node size 44px */
+    left: 80px; /* Center alignment offset */
+    right: 80px; /* Center alignment offset */
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--border-color) 100%);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-node {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-light) !important;
+    border: 3px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Highlight timeline nodes using CSS variables */
+.timeline-item:nth-child(odd) .timeline-node {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.timeline-node.timeline-active {
+    background: linear-gradient(135deg, #34a853 0%, #2e7d32 100%) !important;
+    border-color: #34a853 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(52, 168, 83, 0.3) !important;
+}
+
+.timeline-info {
+    margin-top: 15px;
+}
+
+.timeline-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.timeline-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+    max-width: 140px;
+}
