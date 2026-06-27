@@ -29,7 +29,7 @@ def setup_page_layout():
     
     # Sidebar Logo and Title
     st.sidebar.image(os.path.join("assets", "heart.png"), width=80)
-    st.sidebar.title("MediPredict AI")
+    st.sidebar.title("CardioMind AI")
     st.sidebar.markdown("### AI-Powered Screening")
     
     # Theme switch toggle (using toggle switch for modern sidebar styling)
@@ -198,7 +198,7 @@ def render_footer():
     current_time = pd.Timestamp.now().strftime("%B %d, %Y - %H:%M")
     st.markdown(f"""
         <div class="footer-text">
-            MediPredict AI • Cardiovascular Diagnosis Support System<br>
+            CardioMind AI • Cardiovascular Diagnosis Support System<br>
             Developed by Dharanidharan T (Sri Eshwar College of Engineering)<br>
             CodeAlpha Machine Learning Internship Project • Last Refreshed: {current_time}
         </div>
@@ -209,10 +209,10 @@ def render_home_page():
     # Hero Section
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.markdown("<h1 style='color: var(--primary-color); font-size: 3rem; margin-top:0;'>MediPredict AI</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='color: var(--primary-color); font-size: 3rem; margin-top:0;'>CardioMind AI</h1>", unsafe_allow_html=True)
         st.markdown("<h3 style='color: #5f6368; margin-top:0;'>AI-Powered Heart Disease Prediction System</h3>", unsafe_allow_html=True)
         st.markdown("""
-        Welcome to **MediPredict AI**, a diagnostic decision support tool designed to aid clinicians 
+        Welcome to **CardioMind AI**, a diagnostic decision support tool designed to aid clinicians 
         and individuals in early screening and detection of cardiovascular risk factors. 
         Using advanced machine learning, we process multi-modal health attributes to analyze patient heart health.
         """)
@@ -261,7 +261,7 @@ def render_home_page():
     Cardiovascular diseases (CVDs) are the leading cause of death globally, taking an estimated 17.9 million lives each year. 
     Early identification of high-risk patients can prevent adverse events and improve outcomes. 
     
-    **MediPredict AI** integrates a Random Forest Classifier trained on clinical patient data (the Cleveland Heart Disease Dataset) 
+    **CardioMind AI** integrates a Random Forest Classifier trained on clinical patient data (the Cleveland Heart Disease Dataset) 
     to automatically evaluate and predict heart health. By entering patient demographic, clinical, and stress test parameters, 
     the system calculates a quantitative risk score and generates actionable recommendations based on standard clinical guidelines.
     """)
