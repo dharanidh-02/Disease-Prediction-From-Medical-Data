@@ -220,7 +220,7 @@ def generate_pdf_report(patient_data, risk_score, recommendation, filepath):
     story = []
     
     # Header Banner
-    story.append(Paragraph("MediPredict AI", title_style))
+    story.append(Paragraph("CardioMind AI", title_style))
     story.append(Paragraph("Cardiovascular Health Analysis Report — Clinical Summary", subtitle_style))
     story.append(Spacer(1, 10))
     

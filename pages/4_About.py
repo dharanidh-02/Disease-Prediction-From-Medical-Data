@@ -6,7 +6,7 @@ if 'dark_mode' not in st.session_state:
     st.session_state['dark_mode'] = False
 
 st.set_page_config(
-    page_title="MediPredict AI - About",
+    page_title="CardioMind AI - About",
     page_icon="https://img.icons8.com/color/48/heart-monitor.png",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -25,7 +25,7 @@ from app import setup_page_layout, render_footer
 setup_page_layout()
 
 # Title
-st.markdown("<h1 style='color: var(--primary-color); font-size: 2.2rem;'>About MediPredict AI Project</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: var(--primary-color); font-size: 2.2rem;'>About CardioMind AI Project</h1>", unsafe_allow_html=True)
 st.markdown("<p style='color: #5f6368; margin-top: -10px;'>Learn more about the technology stack, dataset parameters, and developer.</p>", unsafe_allow_html=True)
 st.write("---")
 
@@ -36,7 +36,7 @@ with col1:
     with st.container(key="about_card_objectives", border=True):
         st.markdown("<h3 style='color: var(--primary-color); margin-top:0;'>Project Objectives & Context</h3>", unsafe_allow_html=True)
         st.write("""
-        **MediPredict AI** is a professional cardiovascular screening application developed to support early detection 
+        **CardioMind AI** is a professional cardiovascular screening application developed to support early detection 
         of heart disease. Identifying risk parameters is crucial for proactive patient management. 
         By leveraging a Random Forest model, the application serves as a diagnostic dashboard for clinic screenings.
         """)

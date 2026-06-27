@@ -322,7 +322,7 @@ def render_home_page():
 
 if __name__ == "__main__":
     st.set_page_config(
-        page_title="MediPredict AI - Heart Disease Prediction",
+        page_title="CardioMind AI - Heart Disease Prediction",
         page_icon="https://img.icons8.com/color/48/heart-monitor.png",
         layout="wide",
         initial_sidebar_state="expanded"

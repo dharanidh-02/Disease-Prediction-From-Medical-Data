@@ -6,7 +6,7 @@ if 'dark_mode' not in st.session_state:
     st.session_state['dark_mode'] = False
 
 st.set_page_config(
-    page_title="MediPredict AI - Performance",
+    page_title="CardioMind AI - Performance",
     page_icon="https://img.icons8.com/color/48/heart-monitor.png",
     layout="wide",
     initial_sidebar_state="expanded"
